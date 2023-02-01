@@ -19,5 +19,13 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SurferClub/server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SurferClub/server/issues"
+  },
+  "homepage": "https://github.com/SurferClub/server#readme",
   "description": ""
 }
