@@ -38,17 +38,21 @@ const createProduct = async (req, res, next) => {
     console.log(error);
   }
 };
-const updateProduct = async (req, res) => {
-  const id = parseInt(req.params.id);
-  console.log(id);
-  const {fecha} = req.body
-  const { nombre, marca, valor } = req.body;
+const updateProduct = async (req, res, next) => {
+  try {
+    const id = parseInt(req.params.id);
+    console.log(id);
+    const {fecha} = req.body
+    const { nombre, marca, valor } = req.body;
   
    const response = await pool.query(
     "UPDATE inventario SET nombre = $1, marca = $2, valor= $3, fecha=$4 WHERE id = $5",
     [nombre, marca, valor, fecha , id]
   );
   console.log(response.rows)
+  } catch (error) {
+    console.log(error)
+  }
 };
 const deleteProduct = async (req, res) => {
   const id = parseInt(req.params.id)
