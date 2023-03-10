@@ -1,5 +1,11 @@
 const { pool } = require("../db");
 
+const stockProduct = async (req,res,next )=>{
+  const response = await pool.query(
+    "SELECT * FROM inventario ORDER BY id ASC")
+  await res.status(200).json(response.rows);
+}
+
 const getProducts = async (req, res, next) => {
   const response = await pool.query(
     "SELECT * FROM  inventario ORDER BY id ASC"
@@ -69,4 +75,5 @@ module.exports = {
   createProduct,
   updateProduct,
   deleteProduct,
+  stockProduct
 };

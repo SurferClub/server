@@ -26,6 +26,9 @@ export default function Navbar() {
         <Button variant='contained'
         onClick={()=> navigate("/product/new")}
         >save</Button>
+        <Button variant='contained'
+        onClick={()=> navigate("/products/stock")}
+        >Stock</Button>
         </Toolbar>
         </Container>
     </AppBar>

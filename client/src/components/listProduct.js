@@ -3,24 +3,28 @@ import { Typography, Card, CardContent, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 export default function ListProduct() {
+ 
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
+  
   const loadProduct = async () => {
     const response = await fetch("http://localhost:4000/products");
     const data = await response.json();
     setProducts(data);
   };
-
-  const handleDelete = async(id) => {
+  
+  const handleDelete = async (id) => {
     await fetch(`http://localhost:4000/products/${id}`, {
       method: "DELETE",
     });
 
-    setProducts(products.filter((product)=> product.id !== id))
+    setProducts(products.filter((product) => product.id !== id));
   };
   useEffect(() => {
     loadProduct();
   }, []);
+
+  
   return (
     <>
       <h1>List Products</h1>
