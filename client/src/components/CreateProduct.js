@@ -41,6 +41,13 @@ function CreateProduct() {
     navigate("/")
   };
 
+  const handleUpload = async (e) => {
+    console.log(e)
+    await fetch('react-gallery2.s3.amazonaws.com',{
+      method: "PUT"
+    })
+  }
+
   const handleChange = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });
     // console.log(product)
@@ -98,6 +105,9 @@ function CreateProduct() {
               label="fecha de ingreso"
               onChange={handleChange}
             ></TextField>
+            <Button variant="contained" component="label" >Subir
+            <input type="file"  onSubmit={handleUpload} />
+            </Button>
             <Button variant="contained" color="primary" type="submit">
               SAVE
             </Button>

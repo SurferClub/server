@@ -1,4 +1,4 @@
-import {Typography, CardContent, Card, } from '@mui/material'
+import {Typography, CardContent, Card, Grid, } from '@mui/material'
 import React from 'react'
 import {useState,useEffect} from 'react'
 
@@ -21,7 +21,8 @@ export default function Stock() {
       <h1>List Products in stock</h1>
 
       {products.map((product) => (
-        <Card style={{ backgroundColor: "#1e272e" }} key={product.id}>
+        <Grid /* container justify="center" */ /* item xs={4} sm={2} */ /* container spacing={1} */>
+          <Card style={{ backgroundColor: "#1e272e",  display : "flex" }} key={product.id}>
           <CardContent style={{ display: "flex" }}>
             <div
               style={{
@@ -33,11 +34,9 @@ export default function Stock() {
               <Typography>{product.valor}</Typography>
               <Typography>{product.fecha}</Typography>
             </div>
-            
-              
-            
           </CardContent>
         </Card>
+        </Grid>
       ))}
     </>
   )

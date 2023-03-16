@@ -51,3 +51,4 @@ SELECT marca, SUM (valor) FROM inventario GROUP BY marca;
 SELECT marca, SUM (valor) FROM inventario GROUP BY marca HAVING SUM(valor)>900;
 ////
 ////  
+ALTER TABLE inventario ADD COLUMN linkimg VARCHAR(400);
