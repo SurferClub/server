@@ -105,9 +105,8 @@ function CreateProduct() {
               label="fecha de ingreso"
               onChange={handleChange}
             ></TextField>
-            <Button variant="contained" component="label" >Subir
-            <input type="file"  onSubmit={handleUpload} />
-            </Button>
+            <input type="file" id="file" onSubmit={handleUpload} />
+            
             <Button variant="contained" color="primary" type="submit">
               SAVE
             </Button>

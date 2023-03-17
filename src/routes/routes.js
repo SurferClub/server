@@ -20,3 +20,4 @@ router.delete("/products/:id", deleteProduct);
 router.post("/",upload)
 
 module.exports= router
+
